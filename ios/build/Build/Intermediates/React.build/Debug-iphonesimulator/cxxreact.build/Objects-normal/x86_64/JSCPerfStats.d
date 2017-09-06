@@ -1,5 +1,0 @@
-dependencies: \
-  /Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/react-native/ReactCommon/cxxreact/JSCPerfStats.cpp \
-  /Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/react-native/ReactCommon/cxxreact/JSCPerfStats.h \
-  /Users/kristinataneva/Documents/ReactNative/NewTestt/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
-  /Users/kristinataneva/Documents/ReactNative/NewTestt/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h
