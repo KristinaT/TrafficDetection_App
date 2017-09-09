@@ -11,52 +11,55 @@ import { List, ListItem } from 'react-native-elements';
 import { posts } from '../config/data2';
 
 class News extends Component {
-    onLearnMore = (post) => {
-        this.props.navigation.navigate('NewsDetail', post);
+    onLearnMore = (data) => {
+        this.props.navigation.navigate('NewsDetail', data);
+    };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            datas: []
+        }
+    }
+    componentDidMount(){
+        fetch('http://localhost:3000/traffic', {
+            method: 'GET'
+        })
+            .then((response) => response.json())
+            .then((responseJson) => {
+                console.log(responseJson);
+
+                this.setState({
+                    datas: responseJson
+                })
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+    renderData = () => {
+       // console.log(this.state.datas," datas");
+        return(
+            this.state.datas.map(data => (
+            <ListItem
+                key= {data.id}
+                title= {data.name}
+                onPress={() => this.onLearnMore(data)}
+            />
+            ))
+        );
     };
 
     render() {
+        console.log(this.state);
         return (
             <ScrollView>
                 <List>
-                    {posts.map((post) => (
-                        <ListItem
-                            key={post.postId}
-                            title={post.address}
-                            subtitle={post.name}
-                            onPress={() => this.onLearnMore(post)}
-                        />
-                    ))}
+                    {this.renderData()}
                 </List>
             </ScrollView>
         );
     }
 }
-
-//ORIGINAL THAT WORKS
-//class Feed extends Component {
-//    onLearnMore = (user) => {
-//        this.props.navigation.navigate('UserDetail', user);
-//    };
-//
-//    render() {
-//        return (
-//            <ScrollView>
-//                <List>
-//                    {users.map((user) => (
-//                        <ListItem
-//                            key={user.login.username}
-//                            roundAvatar
-//                            avatar={{ uri: user.picture.thumbnail }}
-//                            title={`${user.name.first.toUpperCase()} ${user.name.last.toUpperCase()}`}
-//                            subtitle={user.email}
-//                            onPress={() => this.onLearnMore(user)}
-//                        />
-//                    ))}
-//                </List>
-//            </ScrollView>
-//        );
-//    }
-//}
-
 export default News;

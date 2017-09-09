@@ -57,6 +57,28 @@ class Me extends Component {
         };
         console.log(data.name,data.location.lat,data.location.long);
 
+        const URL = "http://localhost:3000/traffic";
+        const params = {name: this.state.trafficOptions , latitude: this.state.latitude, longtitude: this.state.longitude};
+
+        //fetch("http://localhost:3000/traffic", {method: "POST", body: JSON.stringify({name: this.state.trafficOptions , latitude: this.state.latitude, longtitude: this.state.longitude})})
+        //    .then((response) => response.json())
+        //    .done();
+
+
+        fetch( URL, {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json', // <-- Specifying the Content-Type
+            }),
+            body: JSON.stringify(params) // <-- Post parameters
+        })
+            .then((response) => response.text())
+            .then((responseText) => {
+                alert(responseText);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
 
     }
 
@@ -66,16 +88,16 @@ class Me extends Component {
         <View>
             <View style={styles.flex2}>
             <Text style={styles.text}>Изберете тип на застој: </Text>
-            <Picker style={styles.picker} itemStyle={{height: 90,fontWeight:"bold"}} selectedValue ={this.state.trafficOptions} onValueChange = {this.updateTraffic}>
-                <Picker.Item label="Сообраќајна незгода" value="soobrakjaka" />
-                <Picker.Item label="Работа на патот" value="rabota" />
-                <Picker.Item label="Блокиран сообраќај" value="blokada" />
-                <Picker.Item label="Непознато" value="nepoznato" />
+            <Picker style={styles.picker} itemStyle={{height: 90}} selectedValue ={this.state.trafficOptions} onValueChange = {this.updateTraffic}>
+                <Picker.Item label="Сообраќајна незгода" value="Accident" />
+                <Picker.Item label="Работа на патот" value="Road Construction" />
+                <Picker.Item label="Блокиран сообраќај" value="Traffic Jam" />
+                <Picker.Item label="Непознато" value="Unknown" />
             </Picker>
             </View>
 
             <View style={styles.flex1}>
-            <Text style={{fontSize:20, paddingBottom:15}}>Вашата моментална локација е: <Text style={{fontWeight:"bold",whiteSpace:"pre",alignSelf: 'center'}}>Рилски Конгрес 28 </Text> </Text>
+            <Text style={{ paddingBottom:15}}>Вашата моментална локација е: <Text>Рилски Конгрес 28 </Text> </Text>
             <Button title="Испрати" onPress={()=>this.sendData()}/>
             </View>
 
@@ -86,7 +108,6 @@ class Me extends Component {
 
 const styles = StyleSheet.create({
     main:{
-        fontSize: 20,
         alignSelf: 'center',
     },
     flex2:{
@@ -96,7 +117,6 @@ const styles = StyleSheet.create({
         padding:0,
         marginTop:30,
         marginBottom:10,
-        fontSize: 20,
         alignSelf: 'center',
     },
     picker:{
@@ -111,7 +131,6 @@ const styles = StyleSheet.create({
         padding:0,
         position:"relative",
         top: 400,
-        fontSize: 20,
         alignSelf: 'center',
     },
     picker:{

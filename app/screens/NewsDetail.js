@@ -6,25 +6,25 @@ import MapView from 'react-native-maps';
 
 class NewsDetail extends Component {
     render() {
-        const { name, address, location : {lat, long} } = this.props.navigation.state.params;
+        const { name, latitude, longtitude } = this.props.navigation.state.params;
 
         return (
             <View style={styles.container}>
                 <MapView style={styles.map}
                     initialRegion={{
-                        latitude: parseFloat(lat),
-                        longitude: parseFloat(long),
+                        latitude: parseFloat(latitude),
+                        longitude: parseFloat(longtitude),
                         latitudeDelta: 0.0043,
                         longitudeDelta: 0.0034
                     }}>
                     <MapView.Marker
-                        coordinate={{latitude: parseFloat(lat),
-                        longitude: parseFloat(long)}}>
+                        coordinate={{latitude: parseFloat(latitude),
+                        longitude: parseFloat(longtitude)}}>
                     </MapView.Marker>
                 </MapView>
                 <View style={styles.text}>
                 <Text>  <Text style={{fontWeight: "bold"}}>Тип на застој:</Text> {name} </Text>
-                <Text>   <Text style={{fontWeight: "bold"}}> Адреса: </Text> {address}</Text>
+                <Text>   <Text style={{fontWeight: "bold"}}> Адреса: </Text> _____Адресата треба да се најде_____</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                 <Button color="#cc0000" title="Потврди"></Button>
