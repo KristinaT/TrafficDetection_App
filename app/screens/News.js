@@ -8,7 +8,6 @@ import {
     ScrollView
 } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
-import { posts } from '../config/data2';
 
 class News extends Component {
     onLearnMore = (data) => {
