@@ -4,7 +4,10 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, Picker,Header, Button } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
+//import Geocoder from 'react-native-geocoding';
 import Geocoder from 'react-native-geocoding';
+const API_KEY="AIzaSyDgNd9_cIt48ilo7LvREm_VcGI9-XwYAeo";
+const googleApiUrl = 'https://maps.google.com/maps/api/geocode/json';
 
 class Me extends Component {
 
@@ -16,6 +19,7 @@ class Me extends Component {
         trafficOptions: 'soobrakjajka',
         latitude: null,
         longitude: null,
+        fullAddress:null
     };
 
     //geocoder starts
@@ -23,6 +27,49 @@ class Me extends Component {
     //    lat:state.latitude,
     //    lng:state.longitude
     //};
+
+//GEOCODER TEST
+
+    async getFromLatLng(lat, lng) {
+        //if (!this.apiKey) {
+        //    return Promise.reject(new Error("Provided API key is invalid"));
+        //}
+
+        //if (!lat || !lng) {
+        //    return Promise.reject(new Error("Provided coordinates are invalid"));
+        //}
+
+        const latLng = `${lat},${lng}`;
+        const url = `${googleApiUrl}?key=${API_KEY}&latlng=${encodeURI(latLng)}`;
+        console.log("LatLng ", url);
+        return this.handleUrl(url);
+    }
+    async handleUrl(url) {
+        const response = await fetch(url).catch(
+            error => {
+                return Promise.reject(new Error("Error fetching data"));
+            }
+        );
+
+        const json = await response.json().catch(
+            error => {
+                return Promise.reject(new Error("Error parsing server response"));
+            }
+        );
+
+        if (json.status === 'OK') {
+            const name=json.results[0].address_components[1].long_name;
+            const number = json.results[0].address_components[0].long_name;
+            const fullAddress=name+" "+number;
+            console.log("Momentalna adresa: ",fullAddress.toString());
+            this.state.fullAddress = fullAddress;
+            //return fullAddress;
+        }
+        else {
+            return Promise.reject(new Error(`Server returned status code ${json.status}`));
+        }
+    }
+// GEOCODER TEST END
 
     componentDidMount() {
         this.watchId = navigator.geolocation.watchPosition(
@@ -55,7 +102,7 @@ class Me extends Component {
                 long:this.state.longitude
             }
         };
-        console.log(data.name,data.location.lat,data.location.long);
+        console.log("User Data for sending" + data.name,data.location.lat,data.location.long);
 
         const URL = "http://localhost:3000/traffic";
         const params = {name: this.state.trafficOptions , latitude: this.state.latitude, longtitude: this.state.longitude};
@@ -84,6 +131,7 @@ class Me extends Component {
 
 
     render() {
+        var bla =this.getFromLatLng(this.state.latitude,this.state.longitude);
     return (
         <View>
             <View style={styles.flex2}>
@@ -97,7 +145,7 @@ class Me extends Component {
             </View>
 
             <View style={styles.flex1}>
-            <Text style={{ paddingBottom:15}}>Вашата моментална локација е: <Text>Рилски Конгрес 28 </Text> </Text>
+            <Text style={{ paddingBottom:15}}>Вашата моментална локација е: <Text> {this.state.fullAddress}</Text> </Text>
             <Button title="Испрати" onPress={()=>this.sendData()}/>
             </View>
 
