@@ -5,7 +5,8 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
-    ScrollView
+    ScrollView,
+    RefreshControl
 } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 
@@ -17,9 +18,11 @@ class News extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            datas: []
+            datas: [],
+            refreshing: false,
         }
     }
+
     componentDidMount(){
         fetch('http://localhost:3000/traffic', {
             method: 'GET'
@@ -36,9 +39,16 @@ class News extends Component {
                 console.error(error);
             });
     }
+    shouldComponentUpdate(nextProps, nextState) {
+        //console.log(nextProps, nextState);
+        //console.log(this.props, this.state);
+
+        return true;
+    }
 
     renderData = () => {
        // console.log(this.state.datas," datas");
+        console.log("povikano");
         return(
             this.state.datas.map(data => (
             <ListItem
@@ -49,14 +59,26 @@ class News extends Component {
             ))
         );
     };
+    _onRefresh() {
+        this.setState({refreshing: true});
+        this.componentDidMount();
+        this.renderData();
+        this.setState({refreshing: false});
+
+    }
 
     render() {
         console.log(this.state);
         return (
-            <ScrollView>
-                <List>
-                    {this.renderData()}
-                </List>
+            <ScrollView
+                refreshControl={
+                    <RefreshControl
+                    refreshing={this.state.refreshing}
+                    onRefresh={this._onRefresh.bind(this)}
+                    />}>
+                    <List>
+                        {this.renderData()}
+                    </List>
             </ScrollView>
         );
     }
