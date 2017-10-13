@@ -4,10 +4,9 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet, View, Text, Picker,Header, Button } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
-//import Geocoder from 'react-native-geocoding';
-import Geocoder from 'react-native-geocoding';
 const API_KEY="AIzaSyDgNd9_cIt48ilo7LvREm_VcGI9-XwYAeo";
 const googleApiUrl = 'https://maps.google.com/maps/api/geocode/json';
+
 
 class Me extends Component {
 
@@ -22,26 +21,11 @@ class Me extends Component {
         fullAddress:null
     };
 
-    //geocoder starts
-    //const test={
-    //    lat:state.latitude,
-    //    lng:state.longitude
-    //};
-
-//GEOCODER TEST
-
     async getFromLatLng(lat, lng) {
-        //if (!this.apiKey) {
-        //    return Promise.reject(new Error("Provided API key is invalid"));
-        //}
-
-        //if (!lat || !lng) {
-        //    return Promise.reject(new Error("Provided coordinates are invalid"));
-        //}
 
         const latLng = `${lat},${lng}`;
         const url = `${googleApiUrl}?key=${API_KEY}&latlng=${encodeURI(latLng)}`;
-        console.log("LatLng ", url);
+        //console.log("LatLng ", url);
         return this.handleUrl(url);
     }
     async handleUrl(url) {
@@ -69,7 +53,6 @@ class Me extends Component {
             return Promise.reject(new Error(`Server returned status code ${json.status}`));
         }
     }
-// GEOCODER TEST END
 
     componentDidMount() {
         this.watchId = navigator.geolocation.watchPosition(
@@ -100,12 +83,14 @@ class Me extends Component {
             location:{
                 lat:this.state.latitude,
                 long:this.state.longitude
-            }
+            },
+            address:this.state.fullAddress
         };
-        console.log("User Data for sending" + data.name,data.location.lat,data.location.long);
+      //  console.log("User Data for sending " + data.name,data.location.lat, data.location.long + data.fullAddress);
 
         const URL = "http://localhost:3000/traffic";
-        const params = {name: this.state.trafficOptions , latitude: this.state.latitude, longtitude: this.state.longitude};
+        const params = {name: this.state.trafficOptions , latitude: this.state.latitude, longtitude: this.state.longitude, address:this.state.fullAddress};
+        console.log("User Data for sending " + this.state.latitude, this.state.longitude, this.state.fullAddress);
 
         //fetch("http://localhost:3000/traffic", {method: "POST", body: JSON.stringify({name: this.state.trafficOptions , latitude: this.state.latitude, longtitude: this.state.longitude})})
         //    .then((response) => response.json())
@@ -131,7 +116,7 @@ class Me extends Component {
 
 
     render() {
-        var bla =this.getFromLatLng(this.state.latitude,this.state.longitude);
+        const getUserLocation =this.getFromLatLng(this.state.latitude,this.state.longitude);
     return (
         <View>
             <View style={styles.flex2}>

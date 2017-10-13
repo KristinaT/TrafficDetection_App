@@ -6,7 +6,7 @@ import MapView from 'react-native-maps';
 
 class NewsDetail extends Component {
     render() {
-        const { name, latitude, longtitude } = this.props.navigation.state.params;
+        const { name, latitude, longtitude, address } = this.props.navigation.state.params;
 
         return (
             <View style={styles.container}>
@@ -24,7 +24,7 @@ class NewsDetail extends Component {
                 </MapView>
                 <View style={styles.text}>
                 <Text>  <Text style={{fontWeight: "bold"}}>Тип на застој:</Text> {name} </Text>
-                <Text>   <Text style={{fontWeight: "bold"}}> Адреса: </Text> _____Адресата треба да се најде_____</Text>
+                <Text>   <Text style={{fontWeight: "bold"}}> Адреса: </Text> {address}</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                 <Button color="#cc0000" title="Потврди"></Button>
