@@ -33,13 +33,12 @@ class NewsDetail extends Component {
                     raised
                     buttonStyle={{backgroundColor: 'red', borderRadius: 3, height: 40, width:120}}
                     textStyle={{textAlign: 'center'}}
-                    title="Потврди"
-                ></Button>
+                    title="Потврди"/>
                 <Button
                     raised
                     buttonStyle={{backgroundColor: 'green', borderRadius: 3, height: 40, width:120}}
                     textStyle={{textAlign: 'center'}}
-                    title="Разрешено"></Button>
+                    title="Разрешено" />
                 </View>
 
 
