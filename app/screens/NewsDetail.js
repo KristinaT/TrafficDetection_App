@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, View, StyleSheet, Button } from 'react-native';
-import { Tile, List, ListItem } from 'react-native-elements';
+import { ScrollView, Text, View, StyleSheet } from 'react-native';
+import { Tile, List, ListItem, Button } from 'react-native-elements';
 import MapView from 'react-native-maps';
 const translit = require('latin-to-cyrillic');
 
@@ -28,9 +28,18 @@ class NewsDetail extends Component {
                 <Text>  <Text style={{fontWeight: "bold"}}>Тип на застој:</Text> {translit(name)} </Text>
                 <Text>   <Text style={{fontWeight: "bold"}}> Адреса: </Text> {translit(address)}</Text>
                 </View>
-                <View style={{flexDirection: 'row'}}>
-                <Button color="#cc0000" title="Потврди"></Button>
-                <Button color="#2eb82e" title="Разрешено"></Button>
+                <View style={{flexDirection: 'row', padding:10}}>
+                <Button
+                    raised
+                    buttonStyle={{backgroundColor: 'red', borderRadius: 3, height: 40, width:120}}
+                    textStyle={{textAlign: 'center'}}
+                    title="Потврди"
+                ></Button>
+                <Button
+                    raised
+                    buttonStyle={{backgroundColor: 'green', borderRadius: 3, height: 40, width:120}}
+                    textStyle={{textAlign: 'center'}}
+                    title="Разрешено"></Button>
                 </View>
 
 
@@ -54,11 +63,12 @@ const styles = StyleSheet.create({
         top: 0,
         left: 0,
         right: 0,
-        bottom: 90,
+        bottom: 100,
 
     },
     text:{
         marginBottom:0,
+      //  margin:10,
         alignItems: 'center'
     }
 });

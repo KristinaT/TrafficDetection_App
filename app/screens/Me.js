@@ -151,7 +151,7 @@ class Me extends Component {
                         title="Испрати" onPress={()=>this.sendData()}
                         raised
                         icon={{name: 'send', type: 'font-awesome'}}
-                        buttonStyle={{backgroundColor: 'purple', borderRadius: 3, width:300}}
+                        buttonStyle={{backgroundColor: '#8cc152', borderRadius: 3, width:300}}
                         textStyle={{textAlign: 'center'}}
                     />
                 </View>
