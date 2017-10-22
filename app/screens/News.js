@@ -9,6 +9,7 @@ import {
     RefreshControl
 } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
+const translit = require('latin-to-cyrillic');
 
 class News extends Component {
     onLearnMore = (data) => {
@@ -49,11 +50,13 @@ class News extends Component {
     renderData = () => {
        // console.log(this.state.datas," datas");
         console.log("povikano");
+       // const test= translit(data.name);
         return(
             this.state.datas.map(data => (
             <ListItem
                 key= {data.id}
-                title= {data.name}
+                title= {translit(data.name)}
+                subtitle={translit(data.address)}
                 onPress={() => this.onLearnMore(data)}
             />
             ))

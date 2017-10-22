@@ -7,6 +7,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"latin-to-cyrillic": "^1.0.1",
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.47.1",
 		"react-native-elements": "^0.15.0",

@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="956b24e8-4e6d-44e2-a59d-b090d232a288" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/router.js" afterPath="$PROJECT_DIR$/app/config/router.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/screens/Me.js" afterPath="$PROJECT_DIR$/app/screens/Me.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/screens/News.js" afterPath="$PROJECT_DIR$/app/screens/News.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/screens/NewsDetail.js" afterPath="$PROJECT_DIR$/app/screens/NewsDetail.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="NewTestt.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +32,8 @@
       <file leaf-file-name="Me.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/screens/Me.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.8888888">
-              <caret line="102" column="86" selection-start-line="102" selection-start-column="86" selection-end-line="102" selection-end-column="86" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="128" column="7" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -38,21 +41,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="News.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="News.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/screens/News.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.81161696">
+              <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsDetail.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NewsDetail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/screens/NewsDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7523511">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -92,13 +105,13 @@
         <option value="$PROJECT_DIR$/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCallout.h" />
         <option value="$PROJECT_DIR$/app/screens/UserDetail.js" />
         <option value="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Header/HeaderBackButton.js" />
-        <option value="$PROJECT_DIR$/app/config/router.js" />
         <option value="$PROJECT_DIR$/app/config/data2.js" />
         <option value="$PROJECT_DIR$/app/config/services.js" />
-        <option value="$PROJECT_DIR$/app/screens/News.js" />
         <option value="$PROJECT_DIR$/node_modules/react-native-geocoding/Geocoder.js" />
-        <option value="$PROJECT_DIR$/app/screens/Me.js" />
+        <option value="$PROJECT_DIR$/app/config/router.js" />
         <option value="$PROJECT_DIR$/app/screens/NewsDetail.js" />
+        <option value="$PROJECT_DIR$/app/screens/Me.js" />
+        <option value="$PROJECT_DIR$/app/screens/News.js" />
       </list>
     </option>
   </component>
@@ -110,9 +123,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="51" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="809" />
+    <option name="width" value="1389" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -139,6 +153,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -210,7 +225,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -219,7 +233,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="fontSi&#9;null&#9;null&#10;fontSize&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/TrafficDetection_copy(NewTestt)/node_modules/cssstyle/lib/properties/fontSize.js&#10;RCCNavigationController&#9;null&#9;null&#10;backButtonTitle&#9;null&#9;null&#10;Back&#9;ACTION&#9;Back&#10;UserDetai&#9;null&#9;null&#10;AIRMapC&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCallout.h&#10;AIRMapCallout.h&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCallout.h&#10;AIRMap.h&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/react-native-maps/lib/ios/AirMaps/AIRMap.h&#10;infopl&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/ios/build/Build/Products/Debug-iphonesimulator/NewTestt.app/Frameworks/XCTest.framework/en.lproj/InfoPlist.strings&#10;info.&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/ios/build/info.plist&#10;Material Ic&#9;null&#9;null&#10;fontFa&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/cssstyle/lib/properties/fontFamily.js" />
+    <property name="SearchEverywhereHistoryKey" value="justify&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/TrafficDetection_copy(NewTestt)/node_modules/react-native-maps/lib/android/lib/build/tmp/expandedArchives/classes.jar_azuddvvv2oxtizh08jpt6avtc/com/facebook/csslayout/CSSJustify.class&#10;fontSi&#9;null&#9;null&#10;fontSize&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/TrafficDetection_copy(NewTestt)/node_modules/cssstyle/lib/properties/fontSize.js&#10;RCCNavigationController&#9;null&#9;null&#10;backButtonTitle&#9;null&#9;null&#10;Back&#9;ACTION&#9;Back&#10;UserDetai&#9;null&#9;null&#10;AIRMapC&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCallout.h&#10;AIRMapCallout.h&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/react-native-maps/lib/ios/AirMaps/AIRMapCallout.h&#10;AIRMap.h&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/react-native-maps/lib/ios/AirMaps/AIRMap.h&#10;infopl&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/ios/build/Build/Products/Debug-iphonesimulator/NewTestt.app/Frameworks/XCTest.framework/en.lproj/InfoPlist.strings&#10;info.&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/ios/build/info.plist&#10;Material Ic&#9;null&#9;null&#10;fontFa&#9;FILE&#9;file:///Users/kristinataneva/Documents/ReactNative/NewTestt/node_modules/cssstyle/lib/properties/fontFamily.js" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -290,17 +304,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="809" extended-state="6" />
-    <editor active="false" />
+    <frame x="51" y="23" width="1389" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19238901" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1995614" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51738524" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15286624" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -646,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.97684515">
-          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/data2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2170767">
@@ -660,10 +667,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native-geocoding/Geocoder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58603895">
+          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/screens/Settings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.69666183">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7990581">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -671,39 +694,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-native-geocoding/Geocoder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58603895">
-          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/screens/News.js">
+    <entry file="file://$PROJECT_DIR$/app/screens/NewsDetail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/screens/Me.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.8888888">
-          <caret line="102" column="86" selection-start-line="102" selection-start-column="86" selection-end-line="102" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="7" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/screens/NewsDetail.js">
+    <entry file="file://$PROJECT_DIR$/app/screens/News.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7523511">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.81161696">
+          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
           <folding />
         </state>
       </provider>

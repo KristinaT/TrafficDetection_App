@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ScrollView, Text, View, StyleSheet, Button } from 'react-native';
 import { Tile, List, ListItem } from 'react-native-elements';
 import MapView from 'react-native-maps';
+const translit = require('latin-to-cyrillic');
+
 
 
 class NewsDetail extends Component {
@@ -23,8 +25,8 @@ class NewsDetail extends Component {
                     </MapView.Marker>
                 </MapView>
                 <View style={styles.text}>
-                <Text>  <Text style={{fontWeight: "bold"}}>Тип на застој:</Text> {name} </Text>
-                <Text>   <Text style={{fontWeight: "bold"}}> Адреса: </Text> {address}</Text>
+                <Text>  <Text style={{fontWeight: "bold"}}>Тип на застој:</Text> {translit(name)} </Text>
+                <Text>   <Text style={{fontWeight: "bold"}}> Адреса: </Text> {translit(address)}</Text>
                 </View>
                 <View style={{flexDirection: 'row'}}>
                 <Button color="#cc0000" title="Потврди"></Button>

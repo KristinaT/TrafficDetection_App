@@ -2,10 +2,12 @@
  * Created by kristinataneva on 8/8/17.
  */
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View, Text, Picker,Header, Button } from 'react-native';
+import { ScrollView, StyleSheet, View, Picker,Header } from 'react-native';
+import { Button, Text } from 'react-native-elements';
 import { Tile, List, ListItem } from 'react-native-elements';
 const API_KEY="AIzaSyDgNd9_cIt48ilo7LvREm_VcGI9-XwYAeo";
 const googleApiUrl = 'https://maps.google.com/maps/api/geocode/json';
+import translit from 'latin-to-cyrillic';
 
 
 class Me extends Component {
@@ -15,7 +17,7 @@ class Me extends Component {
     //    this.props.navigation.navigate('Settings');
     //};
     state = {
-        trafficOptions: 'soobrakjajka',
+        trafficOptions: 'Nezgoda',
         latitude: null,
         longitude: null,
         fullAddress:null
@@ -113,25 +115,46 @@ class Me extends Component {
             });
 
     }
-
+    //translitAddress(){
+    //    const result=translit(this.state.fullAddress);
+    //    if(result==null){
+    //        return '';
+    //    }
+    //    else {
+    //        return result;
+    //    }
+    //}
 
     render() {
         const getUserLocation =this.getFromLatLng(this.state.latitude,this.state.longitude);
+     //   const translitted = translit(this.state.fullAddress);
     return (
-        <View>
+        <View style={styles.main}>
+
             <View style={styles.flex2}>
             <Text style={styles.text}>Изберете тип на застој: </Text>
-            <Picker style={styles.picker} itemStyle={{height: 90}} selectedValue ={this.state.trafficOptions} onValueChange = {this.updateTraffic}>
-                <Picker.Item label="Сообраќајна незгода" value="Accident" />
-                <Picker.Item label="Работа на патот" value="Road Construction" />
-                <Picker.Item label="Блокиран сообраќај" value="Traffic Jam" />
-                <Picker.Item label="Непознато" value="Unknown" />
+            <Picker style={styles.picker} itemStyle={{height: 100,  backgroundColor:'#e0e0eb'}} selectedValue ={this.state.trafficOptions} onValueChange = {this.updateTraffic}>
+                <Picker.Item label="Сообраќајна незгода" value="Nezgoda" />
+                <Picker.Item label="Работа на патот" value="Rabota na patot" />
+                <Picker.Item label="Блокиран сообраќај" value="Blokada" />
+                <Picker.Item label="Непознато" value="Nepoznato" />
             </Picker>
             </View>
 
             <View style={styles.flex1}>
-            <Text style={{ paddingBottom:15}}>Вашата моментална локација е: <Text> {this.state.fullAddress}</Text> </Text>
-            <Button title="Испрати" onPress={()=>this.sendData()}/>
+                <View style={styles.locationText}>
+                    <Text style={styles.locationText1}>Вашата моментална локација е: </Text>
+                    <Text style={styles.locationText2}> {this.state.fullAddress}</Text>
+                </View>
+                <View style={styles.locationText}>
+                    <Button
+                        title="Испрати" onPress={()=>this.sendData()}
+                        raised
+                        icon={{name: 'send', type: 'font-awesome'}}
+                        buttonStyle={{backgroundColor: 'purple', borderRadius: 3, width:300}}
+                        textStyle={{textAlign: 'center'}}
+                    />
+                </View>
             </View>
 
         </View>
@@ -142,32 +165,50 @@ class Me extends Component {
 const styles = StyleSheet.create({
     main:{
         alignSelf: 'center',
+        flex: 1,
     },
     flex2:{
-        flex: 2
+        flex: 0.3
     },
     text: {
         padding:0,
         marginTop:30,
         marginBottom:10,
         alignSelf: 'center',
+        fontSize: 20
     },
     picker:{
-        margin:0,
-        padding:0,
-        backgroundColor:'#f2ffe6',
         height:200
 
     },
     flex1:{
-        flex:1,
-        padding:0,
-        position:"relative",
-        top: 400,
+        flex:0.3,
         alignSelf: 'center',
     },
+    flex3:{
+        flex: 0.4,
+        alignSelf: 'center',
+        justifyContent:'center',
+        paddingLeft:20,
+        paddingRight:20
+    },
     picker:{
-        height:54,
+        borderStyle:'solid'
+    },
+    locationText:{
+        flex:1,
+        flexDirection: 'column'
+    },
+    locationText1:{
+        flex:0.3,
+        fontSize:20,
+        alignSelf: 'center',
+    },
+    locationText2:{
+        flex:0.7,
+        fontSize:20,
+        alignSelf: 'center',
+        fontWeight:'bold',
     }
 })
 
